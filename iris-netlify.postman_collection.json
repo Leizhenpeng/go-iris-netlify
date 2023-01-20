@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "cfac2e84-627b-40f9-96c0-571c2421f963",
+		"name": "iris-netlify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17977350"
+	},
+	"item": [
+		{
+			"name": "Local Api",
+			"item": [
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"river\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/ping",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Nested",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"river\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/admin/hello",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"admin",
+								"hello"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"river\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/who",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"who"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Nest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"river\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/admin/who&method=post",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"admin",
+								"who&method=post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Netlify Api",
+			"item": [
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"river\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{netlify}}?path=/ping&method=get",
+							"host": [
+								"{{netlify}}"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "/ping"
+								},
+								{
+									"key": "method",
+									"value": "get"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Nested",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"river\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{netlify}}?path=/admin/hello&method=get",
+							"host": [
+								"{{netlify}}"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "/admin/hello"
+								},
+								{
+									"key": "method",
+									"value": "get"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"river\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{netlify}}?path=/who&method=post",
+							"host": [
+								"{{netlify}}"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "/who"
+								},
+								{
+									"key": "method",
+									"value": "post"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Nest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"river\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{netlify}}?path=/admin/who&method=post",
+							"host": [
+								"{{netlify}}"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "/admin/who"
+								},
+								{
+									"key": "method",
+									"value": "post"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://localhost:8082"
+		},
+		{
+			"key": "netlify",
+			"value": "taupe-narwhal-0a0d49.netlify.app/api",
+			"type": "string"
+		}
+	]
+}
