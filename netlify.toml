@@ -1,4 +1,5 @@
 [build]
+publish = "public"
 command = "make build"
 functions = "./functions"
 
