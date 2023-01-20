@@ -32,7 +32,8 @@ func main() {
 	}
 
 	runner, configurator := gateway.New(gateway.Options{
-		URLPathParameter: "path",
+		URLPathParameter:   "path",
+		URLMethodParameter: "method",
 	})
 	app.Run(runner, configurator)
 }
