@@ -19,6 +19,7 @@ func main() {
 	app.OnErrorCode(iris.StatusNotFound, notFound)
 
 	app.Get("/ping", status)
+	app.Post("/who", whoIsGopher)
 
 	admin := app.Party("/admin")
 	admin.Get("/hello", helloGopher)
