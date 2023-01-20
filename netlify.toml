@@ -5,8 +5,8 @@ functions = "./functions"
 
 
 [build.environment]
-GO_VERSION = "1.17.2"
-GIMME_GO_VERSION = "1.17.2"
+GO_VERSION = "1.18"
+GIMME_GO_VERSION = "1.18"
 GO_IMPORT_PATH = "github.com/leizhenpeng/go-iris-netlify"
 
 [[redirects]]
