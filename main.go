@@ -18,19 +18,37 @@ func main() {
 	app := iris.New()
 	app.OnErrorCode(iris.StatusNotFound, notFound)
 
-	app.Get("/", index)
 	app.Get("/ping", status)
+
+	admin := app.Party("/admin")
+	admin.Get("/hello", helloGopher)
+	admin.Post("/who", whoIsGopher)
+
 	if *port != -1 {
 		portNow := fmt.Sprintf(":%d", *port)
 		app.Listen(portNow)
 		return
 	}
 
-	// IMPORTANT:
 	runner, configurator := gateway.New(gateway.Options{
 		URLPathParameter: "path",
 	})
 	app.Run(runner, configurator)
+}
+
+type IWhoRequest struct {
+	Name string `json:"name"`
+}
+
+func whoIsGopher(context iris.Context) {
+	var req IWhoRequest
+	err := context.ReadJSON(&req)
+	if err != nil {
+		context.JSON(iris.Map{"Message": "error"})
+		return
+	}
+	context.JSON(iris.Map{"Message": fmt.Sprintf("oh yes, he is %s",
+		req.Name)})
 }
 
 func notFound(ctx iris.Context) {
@@ -54,4 +72,8 @@ func index(ctx iris.Context) {
 
 func status(ctx iris.Context) {
 	ctx.JSON(iris.Map{"Message": "OK"})
+}
+
+func helloGopher(ctx iris.Context) {
+	ctx.JSON(iris.Map{"Message": "hello gopher"})
 }
