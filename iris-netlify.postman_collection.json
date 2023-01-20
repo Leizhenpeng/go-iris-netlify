@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "cfac2e84-627b-40f9-96c0-571c2421f963",
+		"_postman_id": "6c97a4e8-f172-4b95-bcba-523ffe2c2dda",
 		"name": "iris-netlify",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "17977350"
@@ -109,13 +109,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}/admin/who&method=post",
+							"raw": "{{local}}/admin/who",
 							"host": [
 								"{{local}}"
 							],
 							"path": [
 								"admin",
-								"who&method=post"
+								"who"
 							]
 						}
 					},
@@ -290,7 +290,7 @@
 	"variable": [
 		{
 			"key": "local",
-			"value": "http://localhost:8082"
+			"value": "http://localhost:8080"
 		},
 		{
 			"key": "netlify",
